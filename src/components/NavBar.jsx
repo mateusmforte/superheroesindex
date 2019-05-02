@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import '../css/navbar.css';
+
+import Avatar from '@material-ui/core/Avatar';
+
 export default class NavBar extends Component{
     constructor(){
         super();
@@ -17,7 +20,7 @@ export default class NavBar extends Component{
                     </ul>
                     <div className="user-info">
                         <span>Nome usuário</span>
-                        <img src={require("../img/user.png")} alt="" id="user-photo"/>
+                        <Avatar src={require("../img/user.png")}/>
                         <i className="fas fa-cog" id="user-options"></i>
                     </div>
                 </nav>

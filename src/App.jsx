@@ -1,10 +1,11 @@
 import React from 'react';
-import MainMenu from './components/MainMenu';
+import ListHeroes from './components/ListHeroes';
+import {BrowserRouter,Route} from 'react-router-dom';
 function App() {
   return (
-    <div>
-      <MainMenu/>
-    </div>
+    <BrowserRouter>
+      <Route path="/listheroes" component={ListHeroes}/>
+    </BrowserRouter>
   );
 }
 

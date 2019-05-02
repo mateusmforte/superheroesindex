@@ -1,0 +1,25 @@
+.list-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center
+  }
+  
+  #heroes-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    width: 60%;
+    min-height: 54px;
+    max-height: 500px;
+    padding: 0;
+    overflow: auto
+  }
+  
+  .hero-list-name {
+    padding: 3%;
+    border: 1px solid #eee;
+    list-style-type: none;
+    font-size: 1.5em;
+  }
+  
