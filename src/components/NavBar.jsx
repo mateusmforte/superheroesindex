@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import '../css/navbar.css';
-
+import {NavLink} from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 
+import '../css/navbar.css';
 export default class NavBar extends Component{
     constructor(){
         super();
@@ -14,9 +14,10 @@ export default class NavBar extends Component{
         return(
             <header>
                 <nav className="nav-bar">
+                    <NavLink to="/" className="home-link"><i className="fas fa-mask"></i></NavLink>
                     <ul className="menu">
-                        <li className="menu-item"><a href="">Todos os heróis</a></li>
-                        <li className="menu-item"><a href="">Heróis Favoritos</a></li>
+                        <li className="menu-item"><NavLink to="/listheroes">Todos os heróis</NavLink></li>
+                        <li className="menu-item"><NavLink to="/favorites">Heróis Favoritos</NavLink></li>
                     </ul>
                     <div className="user-info">
                         <span>Nome usuário</span>

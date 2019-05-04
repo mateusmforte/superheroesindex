@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar';
 import '../css/mainmenu.css';
 
 export default class MainMenu extends Component{
     render(){
         return(
             <div>
-                <NavBar/>
                 <main>
-                    <h1>Bem vindo ao SuperHeroIndex!<i className="fas fa-mask"></i></h1>
+                    <h1>Bem vindo ao SuperHeroIndex!</h1>
                     <div className="main-menu">
                         <div className="main-menu-option" id="all-heroes-option">
                             <img className="menu-image" src={require("../img/checklist.png")} alt=""/>

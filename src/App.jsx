@@ -1,13 +1,23 @@
 import React from 'react';
+import {Route,BrowserRouter} from 'react-router-dom';
+
+import NavBar from './components/NavBar';
 import ListHeroes from './components/ListHeroes';
 import MainMenu from './components/MainMenu';
-import {BrowserRouter,Route,IndexRoute} from 'react-router-dom';
+import Profile from './components/Profile';
+
 function App() {
   return (
     <BrowserRouter>
-      <IndexRoute component={MainMenu}/>
-      <Route path="/listheroes" component={ListHeroes}/>
-    </BrowserRouter>
+      <div>
+        <NavBar/>
+      </div>
+      <div className="content">
+          <Route exact path="/" component={MainMenu}/>
+          <Route path="/listheroes" component={ListHeroes}/>
+          <Route path="/profile/:id" component={Profile}/>
+      </div>
+    </BrowserRouter>  
   );
 }
 

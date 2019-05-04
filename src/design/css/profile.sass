@@ -1,0 +1,43 @@
+@import 'navbar'
+
+main 
+    display: grid 
+    grid-template-areas: "hero-name hero-name hero-name""appearance biography power-status""appearance biography power-status""appearance work power-status" "appearance connections power-status"
+    grid-gap: 10px
+
+.profile-content
+    display: flex
+    flex-direction: column
+    align-content: space-between
+#hero-name
+    grid-area: hero-name
+    padding: 0 4%
+#appearance
+    grid-area: appearance
+    display: flex
+    flex-direction: column
+    padding: 3%
+    border-right: 2px solid #eee
+    img 
+        align-self: center
+#biography
+    grid-area: biography
+    padding: 3%
+    border-right: 2px solid #eee
+    #alter-egos
+        display: inline-flex
+        justify-content: space-evenly
+    #aliases
+        display: inline-flex
+        justify-content: space-evenly
+#work 
+    grid-area: work
+    padding: 3%
+
+#connections
+    grid-area: connections
+    padding: 3%
+
+#power-status
+    grid-area: power-status
+    padding: 3%

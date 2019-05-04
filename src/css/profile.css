@@ -1,0 +1,57 @@
+main {
+  display: grid;
+  grid-template-areas:
+     "hero-name hero-name hero-name"
+     "appearance biography power-status" 
+     "appearance biography power-status"
+     "appearance biography power-status";
+  grid-gap: 10px;
+}
+.name-area{
+  grid-area: hero-name;
+}
+.appearance-area{
+  grid-area: appearance;
+}
+.biography-area{
+  grid-area: biography;
+}
+.status-area{
+  grid-area: power-status;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.name-area h1{
+  text-align: center;
+}
+
+#appearance {
+  grid-area: appearance;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  border-right: 2px solid #eee;
+}
+#appearance img {
+  align-self: center;
+  width: 40%;
+}
+
+#biography {
+  border-right: 2px solid #eee;
+}
+#biography #alter-egos {
+  display: inline-flex;
+  justify-content: space-evenly;
+}
+#biography #aliases {
+  display: inline-flex;
+  justify-content: space-evenly;
+}
+
+/*# sourceMappingURL=profile.css.map */
