@@ -1,24 +1,33 @@
-main {
+/*Inicio do setup do template*/
+.profile-container {
   display: grid;
-  grid-template-areas:
-     "hero-name hero-name hero-name"
-     "appearance biography power-status" 
-     "appearance biography power-status"
-     "appearance biography power-status";
-  grid-template-columns: 1fr 2fr 1fr;  
-  grid-gap: 5px;
+  grid-template-columns: 30% 50% 15%;
+  grid-template-rows: 10% 90%;
+  grid-template-areas: 
+    "name name name" 
+    "appearance biography status";
+  margin: 0 auto;
+  font-family: "A typewriter for me";
 }
 .name-area{
-  grid-area: hero-name;
+  grid-area: name;
 }
 .appearance-area{
   grid-area: appearance;
+  padding: 9%;
 }
+
 .biography-area{
   grid-area: biography;
 }
 .status-area{
-  grid-area: power-status;
+  grid-area: status;
+}
+
+/*Fim do template*/
+.name-area h1 {
+  font-family: "Play", sans-serif;
+  text-align: center;
 }
 
 .profile-content {
@@ -27,25 +36,19 @@ main {
   align-content: space-between;
 }
 
-.name-area h1{
-  text-align: center;
-}
-
-#appearance {
-  grid-area: appearance;
+#appearance{
   display: flex;
   flex-direction: column;
-  padding: 3%;
-  border-right: 2px solid #eee;
+  justify-content: space-around;
+  height: 100%;
 }
 #appearance img {
-  align-self: center;
-  width: 90%;
+  width: 100%;
+  box-shadow: 14px 11px 9px 7px rgba(0, 0, 0, 0.75);
+  margin-bottom: 5%;
 }
 
-#biography {
-  border-right: 2px solid #eee;
-}
+
 #biography #alter-egos {
   display: inline-flex;
   justify-content: space-evenly;
@@ -54,27 +57,47 @@ main {
   display: inline-flex;
   justify-content: space-evenly;
 }
+ 
+.profile-content label{
+  line-height: 1.5em;
+}
 
-.powers-legend{
+.powers-legend {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.powers-legend-icons{
+.powers-legend-icons {
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
-.powers-legend-text{
+.powers-legend-text {
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
-.power-icons{
+.power-icons {
   width: 35px;
   margin-left: 9%;
+}
+
+#favorite-button {
+  grid-area: profile-options;
+  align-self: center;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  border: none;
+  font-size: 36px;
+}
+#favorite-button:hover {
+  transition: 0.2s;
+  color: yellow;
+  background-color: orange;
+  box-shadow: 0px 0px 15px 5px yellow;
 }
 
 /*# sourceMappingURL=profile.css.map */

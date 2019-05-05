@@ -5,7 +5,6 @@ export default class HeroName extends React.Component{
         return(
             <div className="name-area">
                 <h1>{this.props.heroname}</h1>
-                <hr/>
             </div>
         )
     }

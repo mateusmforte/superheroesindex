@@ -1,25 +1,30 @@
 .list-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center
-  }
-  
-  #heroes-list {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #eee;
-    width: 60%;
-    min-height: 54px;
-    max-height: 500px;
-    padding: 0;
-    overflow: auto
-  }
-  
-  .hero-list-name {
-    padding: 3%;
-    border: 1px solid #eee;
-    list-style-type: none;
-    font-size: 1.5em;
-  }
-  
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#heroes-list {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-height: 54px;
+  max-height: 500px;
+  padding: 0;
+  overflow: auto;
+}
+
+.hero-list-name {
+  padding: 3%;
+  border-radius: 30px;
+  list-style-type: none;
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+  font-family: "Fjalla One", sans-serif;
+  background-color: #0476f2;
+  text-shadow: 0 0 10px #0476f2;
+  box-shadow: 0 0 25px 0 #0476f2, 0 20px 10px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 2%;
+}

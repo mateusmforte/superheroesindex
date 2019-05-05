@@ -1,31 +1,44 @@
-import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
-import Avatar from '@material-ui/core/Avatar';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+import Avatar from "@material-ui/core/Avatar";
 
-import '../css/navbar.css';
-export default class NavBar extends Component{
-    constructor(){
-        super();
-        this.state={
-
-        };
-    }
-    render(){
-        return(
-            <header>
-                <nav className="nav-bar">
-                    <NavLink to="/" className="home-link"><i className="fas fa-mask"></i></NavLink>
-                    <ul className="menu">
-                        <li className="menu-item"><NavLink to="/listheroes">Todos os heróis</NavLink></li>
-                        <li className="menu-item"><NavLink to="/favorites">Heróis Favoritos</NavLink></li>
-                    </ul>
-                    <div className="user-info">
-                        <span>Nome usuário</span>
-                        <Avatar src={require("../img/user.png")}/>
-                        <i className="fas fa-cog" id="user-options"></i>
-                    </div>
-                </nav>
-            </header>
-        )
-    }
+import "../css/utils/navbar.css";
+export default class NavBar extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+  render() {
+    return (
+      <div className="nav-bar-content">
+        <nav className="nav-bar">
+          <NavLink to="/" className="logo">
+            <i className="logo-icon fas fa-mask" />
+            <span className="logo-text">SuperHeroIndeX</span>
+          </NavLink>
+          <ul className="menu">
+            <li className="menu-item">
+              <NavLink className="menu-link" to="/listheroes">
+                <i className="far fa-list-alt" />
+                <span>Todos os heróis</span>
+              </NavLink>
+            </li>
+            <li className="menu-item">
+              <NavLink className="menu-link" to="/favorites">
+                <i className="far fa-star" />
+                <span>Heróis Favoritos</span>
+              </NavLink>
+            </li>
+          </ul>
+          <div className="user-panel">
+            <Avatar src={require("../img/user.png")} id="user-photo" />
+            <div id="user-info">
+              <span>Nome usuário</span>
+              <i className="fas fa-cog" id="user-options" />
+            </div>
+          </div>
+        </nav>
+      </div>
+    );
+  }
 }
