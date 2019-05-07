@@ -6,59 +6,31 @@ import Search from "./Search";
 export default class Favorites extends React.Component {
   constructor(props) {
     super();
-    this.state = {};
+    this.state = {
+      favoritesHeroes: JSON.parse(localStorage.getItem("user")).favoritesHeroes
+    };
+    console.log(this.state.favoritesHeroes);
+  }
+  showProfile(id){
+    window.location.pathname = `/profile/${id}`
   }
   render() {
     return (
       <div className="favorites-container">
         <h1 className="favorites-title">My Favorites Heroes</h1>
-        <Search/>
+        <Search />
         <div className="favorites-list">
-          <div className="favorite-hero">
-            <i className="remove-button far fa-times-circle" />
-            <img
-              className="favorite-image"
-              src={require("../img/img-profile-default.jpg")}
-              alt=""
-            />
-            <span className="favorite-name">Hero name</span>
-          </div>
-          <div className="favorite-hero">
-            <i className="remove-button far fa-times-circle" />
-            <img
-              className="favorite-image"
-              src={require("../img/img-profile-default.jpg")}
-              alt=""
-            />
-            <span className="favorite-name">Hero name</span>
-          </div>
-          <div className="favorite-hero">
-            <i className="remove-button far fa-times-circle" />
-            <img
-              className="favorite-image"
-              src={require("../img/img-profile-default.jpg")}
-              alt=""
-            />
-            <span className="favorite-name">Hero name</span>
-          </div>
-          <div className="favorite-hero">
-            <i className="remove-button far fa-times-circle" />
-            <img
-              className="favorite-image"
-              src={require("../img/img-profile-default.jpg")}
-              alt=""
-            />
-            <span className="favorite-name">Hero name</span>
-          </div>
-          <div className="favorite-hero">
-            <i className="remove-button far fa-times-circle" />
-            <img
-              className="favorite-image"
-              src={require("../img/img-profile-default.jpg")}
-              alt=""
-            />
-            <span className="favorite-name">Hero name</span>
-          </div>
+          {this.state.favoritesHeroes.map(hero => (
+            <div className="favorite-hero" onClick={() => this.showProfile(hero.id)}>
+              <i className="remove-button far fa-times-circle" />
+              <img
+                className="favorite-image"
+                src={hero.img}
+                alt=""
+              />
+              <span className="favorite-name">{hero.name}</span>
+            </div>
+          ))}
         </div>
       </div>
     );

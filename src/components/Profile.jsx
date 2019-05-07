@@ -3,6 +3,7 @@ import HeroName from "./HeroName";
 import HeroAppearance from "./HeroAppearance";
 import HeroBiography from "./HeroBiography";
 import HeroStatus from "./HeroStatus";
+import Loading from "./Loading";
 
 import "../css/profile.css";
 
@@ -31,16 +32,15 @@ export default class Profile extends React.Component {
     return (
       <div style={{ height: "100%" }}>
         {this.state.isLoading && (
-          <div className="loading">
-            <img src={require("../img/loading.gif")} alt="" />
-            <span className="loading-text">Carregando Herói</span>
-          </div>
+          <Loading text="Carregando Herói.."/>
         )}
         {!this.state.isLoading && (
           <div className="profile-container">
             <HeroName heroname={this.state.hero.name} />
             <HeroAppearance
               heroimage={this.state.hero.image.url}
+              heroId={this.state.hero.id}
+              heroName={this.state.hero.name}
             />
             <HeroBiography
               fullname={this.state.hero.biography["full-name"]}

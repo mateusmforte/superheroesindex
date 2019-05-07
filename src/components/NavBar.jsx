@@ -8,7 +8,9 @@ export default class NavBar extends Component {
     super();
     this.state = {};
   }
+
   render() {
+    //const { isAuthenticated } = this.props.auth;
     return (
       <div className="nav-bar-content">
         <nav className="nav-bar">

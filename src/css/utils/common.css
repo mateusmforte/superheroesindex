@@ -45,5 +45,6 @@ body {
   height: 100%;
   align-items: center;
   justify-content: center;
+  font-family: "A typewriter for me";
 }
 @import "navbar.css";

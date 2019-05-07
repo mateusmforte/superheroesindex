@@ -5,10 +5,12 @@
   "dependencies": {
     "@material-ui/core": "^4.0.0-beta.0",
     "@material-ui/icons": "^4.0.0-beta.0",
+    "auth0-js": "^9.10.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
+    "react-simple-storage": "^1.4.1",
     "recharts": "^1.5.0"
   },
   "scripts": {

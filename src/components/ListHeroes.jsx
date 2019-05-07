@@ -13,7 +13,6 @@ export default class ListHeroes extends React.Component {
       heroes: heroesData,
       searchHeroes: []
     };
-    console.log(this.state.heroes);
   }
 
   componentWillMount() {
@@ -66,5 +65,12 @@ export default class ListHeroes extends React.Component {
         </main>
       </div>
     );
+  /*   if(this.props.auth.isAuthenticated()){
+     
+    }
+    else{
+      window.location.pathname = "/";
+      return null;
+    } */
   }
 }
