@@ -4,6 +4,7 @@ import HeroAppearance from "./HeroAppearance";
 import HeroBiography from "./HeroBiography";
 import HeroStatus from "./HeroStatus";
 import Loading from "./Loading";
+import Error from "./Error";
 
 import "../css/profile.css";
 
@@ -12,7 +13,9 @@ export default class Profile extends React.Component {
     super();
     this.state = {
       hero: [{}],
-      isLoading: true
+      isLoading: true,
+      error: false,
+      errorType: ''
     };
   }
   componentWillMount() {
@@ -25,16 +28,18 @@ export default class Profile extends React.Component {
       .then(results => results.json())
       .then(hero => {
         this.setState({ hero, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({error:true, errorType:'connection', isLoading: false});
       });
   }
 
   render() {
     return (
       <div style={{ height: "100%" }}>
-        {this.state.isLoading && (
-          <Loading text="Carregando Herói.."/>
-        )}
-        {!this.state.isLoading && (
+        {this.state.isLoading && <Loading text="Carregando Herói.." />}
+        {this.state.error && <Error error={this.state.errorType}/>}
+        {!this.state.isLoading && !this.state.error && (
           <div className="profile-container">
             <HeroName heroname={this.state.hero.name} />
             <HeroAppearance

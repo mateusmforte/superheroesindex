@@ -1,7 +1,10 @@
-import React,{useState} from "react";
+import React from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 import Auth from "./Auth/Auth";
 import history from "./history";
+
+import theme from 'styled-theming';
+
 import NavBar from "./components/NavBar";
 import ListHeroes from "./components/ListHeroes";
 import MainMenu from "./components/MainMenu";

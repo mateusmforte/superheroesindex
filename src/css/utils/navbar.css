@@ -1,78 +1,33 @@
-@import './common.css';
-.nav-bar-content{
-  height: 100%;
+@import "./common.css";
+.nav-bar-content {
+  height: 10%;
   width: 100%;
 }
-
 .nav-bar {
-  height: 100%;
-  width: 10%;
+  height: inherit;
+  width: inherit;
   position: fixed;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: #c9e2e1;
-  -webkit-box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.36);
-          box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.36);
+  justify-content: space-between;
+  box-shadow: 1px -11px 14px -3px rgba(0, 0, 0, 0.36);
 }
-
 .nav-bar .logo {
-  height: 15%;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #0476F2;
-  text-decoration: none;
-}
-
-.nav-bar .logo .logo-icon {
-  color: #F9F9F9;
-  font-size: 5em;
-}
-.nav-bar .logo .logo-icon:hover{
-  color: red;
-}
-.nav-bar .logo .logo-text {
-  font-family: "Play", sans-serif;
-  font-size: 22px;
-  color: #F9F9F9;
+  display: none;
 }
 
 .nav-bar .menu {
-  height: 70%;
-  padding: 10% 0;
+  display: flex;
+  order: 2;
+  width: 70%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
   margin: 0;
   background-color: #283044;
   font-family: "Fjalla One", sans-serif;
-}
-
-.nav-bar .menu .menu-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 50% 0;
   list-style-type: none;
 }
 
@@ -80,76 +35,144 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   color: black;
   text-decoration: none;
+  line-height: 2em;
 }
 
 .nav-bar .menu-item .menu-link i {
-  font-size: 3em;
+  font-size: 8vw;
   text-align: center;
-  color: #78A1BB;
+  color: #78a1bb;
 }
-.menu-link i:hover{
-  color:yellow;
+.menu-link i:hover {
+  color: yellow;
 }
-
 
 .nav-bar .menu .menu-item .menu-link span {
-  font-size: 1em;
-  color: #F9F9F9;
+  font-size: 4vw;
+  color: #f9f9f9;
 }
 
 .nav-bar .user-panel {
-  height: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 5%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #0476F2;
-  color: #F9F9F9;
+  width: 30%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0476f2;
+  color: #f9f9f9;
   font-family: "Fjalla One", sans-serif;
-}
-
-.nav-bar .user-panel #user-photo {
-  width: 50px;
-  height: 50px;
 }
 
 .nav-bar .user-panel #user-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 40%;
   width: 100%;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 1%;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 4vw;
 }
-
-.nav-bar .user-panel #user-info span {
-  font-size: 1.1em;
-}
-
 .nav-bar .user-panel #user-info i {
   font-size: 25px;
+  order: 0;
+}
+
+@media (min-width: 768px) {
+  .nav-bar-content {
+    height: 100%;
+    width: 10%;
+  }
+  .nav-bar {
+    flex-direction: column;
+    box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.36);
+  }
+  .nav-bar .logo {
+    height: 13%;
+    width: auto;
+    padding: 2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0476f2;
+    text-decoration: none;
+    box-shadow: 0px 20px 32px -8px rgba(0,0,0,0.75);
+    z-index: 1;
+  }
+  .nav-bar .logo .logo-icon {
+    background-image: url("../../img/icons/superhero.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+  }
+  .nav-bar .logo .logo-icon:hover {
+    color: red;
+  }
+  .nav-bar .logo .logo-text {
+    font-family: "Play", sans-serif;
+    font-size: 1.2vw;
+    color: #f9f9f9;
+  }
+
+  .nav-bar .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 70%;
+    width: auto;
+    padding: 10% 0;
+    order: unset;
+  }
+  .nav-bar .menu .menu-item {
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50% 0;
+  }
+
+  .nav-bar .menu-item .menu-link i {
+    font-size: 4vw;
+  }
+  .menu-link i:hover {
+    color: yellow;
+  }
+  .nav-bar .menu .menu-item .menu-link span {
+    font-size: 1vw;
+  }
+  
+  .nav-bar .user-panel {
+    width: auto;
+    height: 15%;
+    padding: 5%;
+    box-shadow: 0px -20px 32px -8px rgba(0,0,0,0.75);
+    z-index: 1;
+  }
+  
+  .nav-bar .user-panel #user-photo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .nav-bar .user-panel #user-info {
+    flex-direction: column;
+  }
+  
+  .nav-bar .user-panel #user-info span {
+    font-size: 1.5vw;
+  }
+  
+  .nav-bar .user-panel #user-info i {
+    font-size: 3vw;
+  }
 }

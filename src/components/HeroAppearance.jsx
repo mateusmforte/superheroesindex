@@ -11,6 +11,7 @@ export default class HeroAppearance extends React.Component {
     var favorite = [];
     var actualUserPreferences = JSON.parse(localStorage.getItem('user'));
     var actualUserFavorites = actualUserPreferences.favoritesHeroes;
+
     actualUserFavorites.filter(hero => {
       if(hero.id === heroId){ //Favorite 
         isFavorite = true
@@ -28,7 +29,7 @@ export default class HeroAppearance extends React.Component {
       actualUserFavorites.splice(heroId,1);
       localStorage.setItem('user',JSON.stringify(actualUserPreferences)); 
     }else{
-      actualUserFavorites.push({id:heroId,name:heroName,img:heroImg});
+      actualUserFavorites.push({id:heroId,heroname:heroName,img:heroImg});
       localStorage.setItem('user',JSON.stringify(actualUserPreferences)); 
     }
   }

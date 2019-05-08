@@ -1,24 +1,21 @@
 .favorites-container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  padding: 3% 0;
 }
 .favorites-title {
-  font-size: 4em;
-  font-family: "Fjalla One", sans-serif;
-  text-align: center;
+  display: none;
 }
 
 .favorites-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 3fr;
+  grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+  grid-auto-rows: 1fr;
   grid-gap: 5%;
   width: 80%;
-  height: auto;
-  padding: 4%;
-  margin: 2%;
+  padding: 2%;
   overflow-y: auto;
   overflow-x: hidden;
   align-self: center;
@@ -28,6 +25,7 @@
   position: relative;
   text-align: center;
   color: red;
+  height: fit-content;
 }
 .favorite-hero:hover {
   transition: 0.2s;
@@ -51,10 +49,11 @@
   position: absolute;
   bottom: 0px;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   font-family: "A typewriter for me";
   transform: translate(-100%, 0%);
   background-color: rgba(4, 16, 8, 0.58);
   width: 100%;
-  height: 40px;
+  height: auto;
 }
+

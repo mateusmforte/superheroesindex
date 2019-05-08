@@ -1,7 +1,8 @@
 import React from "react";
-import Search from "./Search";
 import { Link } from "react-router-dom";
 import heroesData from "../data/heroes.json";
+import Error from "./Error";
+import Search from "./Search";
 import "../css/listheroes.css";
 
 //const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -42,15 +43,9 @@ export default class ListHeroes extends React.Component {
   render() {
     var listLength = this.state.searchHeroes.length;
     return (
-      <div>
         <main className="list-container">
           <Search onChange={this.searchHeroes.bind(this)} />
-          <h5>
-            {this.state.searchHeroes.length}
-            {listLength > 1 || listLength === 0
-              ? " Heróis encontrados!"
-              : " Herói encontrado!"}
-          </h5>
+          {this.state.searchHeroes.length === 0 && (<Error error='notfound'/>)}
           <ul id="heroes-list">
             {this.state.searchHeroes.map(hero => (
               <Link
@@ -63,7 +58,6 @@ export default class ListHeroes extends React.Component {
             ))}
           </ul>
         </main>
-      </div>
     );
   /*   if(this.props.auth.isAuthenticated()){
      
