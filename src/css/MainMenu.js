@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import {textPrimaryColor} from './utils/themecolors';
 
 export const MainMenuContent = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-family: "A typewriter for me";
+  color: ${textPrimaryColor};
 `;
 
 export const MainMenuContentHeader = styled.h1`
@@ -22,6 +25,6 @@ export const MainMenuContentMessage = styled.p`
 `;
 
 export const MainMenuContentImage = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
 `;

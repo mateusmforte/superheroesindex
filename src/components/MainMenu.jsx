@@ -8,18 +8,14 @@ import {
 } from "../css/MainMenu";
 
 export default class MainMenu extends React.Component {
-  constructor(props){
-    super();
-    console.log(this.props.theme);
-  }
   render() {
    /*  const { isAuthenticated } = this.props.auth;
     !isAuthenticated() && this.props.history.push('/') */
     return (
       <MainMenuContent>
+        <MainMenuContentImage src={require('../img/icons/superheroemote.png')} alt="SuperHero Emoji"/>
         <MainMenuContentHeader>
           Bem vindo ao SuperHeroIndex!
-          <MainMenuContentImage src={require('../img/icons/superheroemote.png')} alt="SuperHero Emoji"/>
         </MainMenuContentHeader>
           <MainMenuContentMessage>
             Para acessar as informações dos heróis utilize o menu.

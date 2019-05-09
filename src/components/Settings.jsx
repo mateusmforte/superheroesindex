@@ -1,44 +1,37 @@
-import React from 'react';
-
-var ACTUAL_USER_PREFERENCES = JSON.parse(localStorage.getItem('user'));
-
-class ThemeSettings extends React.Component{
-    constructor(props){
-        super();
-        this.changeThemePreferences = this.changeThemePreferences.bind(this);
-    }
-    changeThemePreferences(theme){
+import React from "react";
+import { connect } from "react-redux";
+import * as ThemeActions from "../stores/actions/ThemeActions";
+import {SettingsContainer,ThemeSettings,MarvelTheme,DCTheme} from '../css/Settings';
+//var ACTUAL_USER_PREFERENCES = JSON.parse(localStorage.getItem('user'));
+/*     changeThemePreferences(theme){
         var NEW_USER_PREFERENCES = ACTUAL_USER_PREFERENCES;
         
         NEW_USER_PREFERENCES.userPreferences.userTheme = theme; 
      
         localStorage.setItem('user',JSON.stringify(NEW_USER_PREFERENCES)); 
-    }
-    render(){
-        return(
-            <div>
-                <h3>Temas disponíveis:</h3>
-                <button onClick={() => this.changeThemePreferences('marvel')}>Marvel</button>
-                <button onClick={() => this.changeThemePreferences('dc')}>DC</button>
-            </div>
-        )
-    }
-}
+    } */
 
-export default class Settings extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            userPreferences : JSON.parse(localStorage.getItem('user')).userPreferences
-        }
-    }
-    render(){
-        return(
-            <div className="settings-container">
-                <ThemeSettings/>
-            </div>
-        )
-    }
+const Settings = ({toggleTheme}) => (
+  <SettingsContainer>
+    <ThemeSettings>
+      <h3>Temas disponíveis</h3>
+      <MarvelTheme onClick={() => toggleTheme("marvel")}>
+        Marvel
+      </MarvelTheme>
+      <DCTheme onClick={() => toggleTheme("dc")}>DC</DCTheme>
+    </ThemeSettings>
+    </SettingsContainer>
 
+);
 
-}
+const mapStateToProps = state => ({
+    theme: state.theme
+});
+const mapDispatchToProps = dispatch => ({
+    toggleTheme: (theme) => dispatch(ThemeActions.toggleTheme(theme))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Settings);

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {textPrimaryColor} from './utils/themecolors';
 export const ProfileContainer = styled.div`
   display: grid;
   grid-template-columns: 100%;
@@ -14,6 +14,7 @@ export const ProfileContainer = styled.div`
   height: 100%;
   overflow-y: overlay;
   font-family: "A typewriter for me";
+  color:${textPrimaryColor};
 /*   @media (min-width: 768px) {
     grid-template-columns: 18% 48% 28%;
     grid-template-rows: 10% 90%;
@@ -105,7 +106,7 @@ export const StatusArea = styled.div`
   flex-direction: column;
   padding: 2%;
   margin-bottom: 16%;
-  color: white;
+  color: ${textPrimaryColor};
   @media(min-width:768px){
     margin-bottom: 0;
   }

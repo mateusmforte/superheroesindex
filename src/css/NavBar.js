@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+import {
+  primaryColor,
+  secondaryColor,
+  textPrimaryColor,
+  textSecondaryColor,
+  hoverTextColor
+} from "./utils/themecolors";
+//Theme
+
 export const NavBarContent = styled.div`
   height: 10%;
   width: 100%;
@@ -36,26 +45,33 @@ export const Navbar = styled.nav`
       flex-direction: column;
       align-items: center;
       text-decoration: none;
-      box-shadow: 0px 20px 32px -8px rgba(0, 0, 0, 0.75);
+      box-shadow: -6px 0px 11px 0px rgba(0,0,0,0.75);
       z-index: 1;
+      background-color: ${primaryColor};
     }
   }
 `;
 
 export const LogoIcon = styled.i`
   @media (min-width: 768px) {
-    background-image: url("../img/icons/superhero.png");
+    background-image: url(${require('../img/icons/superheroemote.png')});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    color: ${textPrimaryColor};
+    &:hover {
+      color: ${textSecondaryColor};
+    }
   }
 `;
 export const LogoText = styled.span`
   @media (min-width: 768px) {
     font-family: "Play", sans-serif;
     font-size: 1.2vw;
+    color: ${textPrimaryColor};
+    text-decoration: none;
   }
 `;
 
@@ -69,6 +85,7 @@ export const Menu = styled.ul`
   margin: 0;
   font-family: "Fjalla One", sans-serif;
   list-style-type: none;
+  background-color: ${secondaryColor};
   @media (min-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
@@ -85,13 +102,18 @@ export const MenuItem = styled.li`
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    line-height: 2em;
+    line-height: 1em;
+    color: ${textSecondaryColor};
+    &:hover {
+      color: ${hoverTextColor};
+    }
   }
-  i {
+
+  & i {
     font-size: 8vw;
     text-align: center;
   }
-  span {
+  & span {
     font-size: 3vw;
   }
   @media (min-width: 768px) {
@@ -119,11 +141,13 @@ export const UserPanel = styled.div`
   align-items: center;
   justify-content: center;
   font-family: "Fjalla One", sans-serif;
-  @media (min: width:768px) {
+  background-color: ${primaryColor};
+  color: ${textPrimaryColor};
+  @media (min-width: 768px) {
     width: auto;
     height: 15%;
     padding: 5%;
-    box-shadow: 0px -20px 32px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 0px 11px 0px rgba(0,0,0,0.75);
     z-index: 1;
   }
 `;
@@ -133,18 +157,28 @@ export const UserInfo = styled.div`
   width: 100%;
   padding: 1%;
   justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  font-size: 4vw;
-  i {
+  color: ${textPrimaryColor};
+  text-decoration: none;
+  & span {
+    font-size: 3.5vw;
+  }
+  & i {
     font-size: 25px;
     order: 0;
   }
+  & a{
+    color: ${textPrimaryColor};
+    &:hover{
+      color: ${textSecondaryColor};
+    }
+  }
   @media (min-witdh: 768px) {
-    flex-direction: column;
-    span {
+    & span {
       font-size: 1.5vw;
     }
-    i {
+    & i {
       font-size: 3vw;
     }
   }

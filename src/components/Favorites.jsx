@@ -15,7 +15,7 @@ export default class Favorites extends React.Component {
   constructor() {
     super();
     this.state = {
-      favoritesHeroes: JSON.parse(localStorage.getItem("user")).favoritesHeroes,
+      favoritesHeroes: JSON.parse(localStorage.getItem("user")).favorites,
       searchHeroes: []
     };
 

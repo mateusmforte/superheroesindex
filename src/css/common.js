@@ -1,6 +1,7 @@
 import "./utils/reset.css";
 import "./utils/common.css";
 import styled from "styled-components";
+import {secondaryColor,textPrimaryColor} from './utils/themecolors';
 
 export const HeaderContent = styled.div`
   height: 10%;
@@ -10,8 +11,8 @@ export const HeaderContent = styled.div`
   bottom: 0;
   z-index: 3;
   @media (min-width: 768px) {
-    height: 10%;
-    width: 100%;
+    height: 100%;
+    width: 10%;
     margin-right: auto;
   }
 `;
@@ -21,8 +22,8 @@ export const MainContent = styled.div`
   padding: 0 4%;
   display: flex;
   flex-direction: column;
-  background-color: #24262b;
-  color: #f9f9f9;
+  background-color: ${secondaryColor};
+  color: ${textPrimaryColor};
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #f5f5f5;
