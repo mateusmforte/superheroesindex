@@ -1,44 +1,30 @@
-import React, { Component } from "react";
-import "../css/mainmenu.css";
+import React from "react";
+//import "../css/mainmenu.css";
+import {
+  MainMenuContent,
+  MainMenuContentHeader,
+  MainMenuContentMessage,
+  MainMenuContentImage
+} from "../css/MainMenu";
 
-export default class MainMenu extends Component {
-  constructor(props) {
+export default class MainMenu extends React.Component {
+  constructor(props){
     super();
-  }
-  componentDidMount() {
-  
+    console.log(this.props.theme);
   }
   render() {
-    const { isAuthenticated } = this.props.auth;
-   /*  if(!isAuthenticated()){
-        window.location.pathname = '/';
-    } */
+   /*  const { isAuthenticated } = this.props.auth;
+    !isAuthenticated() && this.props.history.push('/') */
     return (
-      <div className="main-menu-content">
-        <h1>Bem vindo ao SuperHeroIndex!</h1>
-        <div className="user-loged">
-          <p>O que deseja procurar?</p>
-          <div className="main-menu">
-            <div className="main-menu-option" id="all-heroes-option">
-              <img
-                className="menu-image"
-                src={require("../img/checklist.png")}
-                alt=""
-              />
-              <h3>Todos os Heróis</h3>
-            </div>
-            <span className="vl" />
-            <div className="main-menu-option" id="favorite-heroes-option">
-              <img
-                className="menu-image"
-                src={require("../img/favorite.png")}
-                alt=""
-              />
-              <h3>Meus Heróis Favoritos</h3>
-            </div>
-          </div>
-        </div>
-      </div>
+      <MainMenuContent>
+        <MainMenuContentHeader>
+          Bem vindo ao SuperHeroIndex!
+          <MainMenuContentImage src={require('../img/icons/superheroemote.png')} alt="SuperHero Emoji"/>
+        </MainMenuContentHeader>
+          <MainMenuContentMessage>
+            Para acessar as informações dos heróis utilize o menu.
+          </MainMenuContentMessage>
+      </MainMenuContent>
     );
   }
 }

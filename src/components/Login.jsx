@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {LoginContent,LoginHeader,LoginHeaderText,LoginHeaderMessage,LoginButton} from '../css/Login';
 export default class Login extends React.Component{
     login() {
         this.props.auth.login();
@@ -11,12 +11,14 @@ export default class Login extends React.Component{
     
     render(){
         return(
-            <div className="no-user-loged">
-                <h1>Super Hero Index</h1>
-                <p>Faça o seu login para ter acesso as informações secretas de todos os heróis.</p>
-                <button onClick={this.login.bind(this)}>Login</button>
-                <button>Cadastrar-se</button>
-            </div>
+            <LoginContent>               
+                <LoginHeader>
+                    <LoginHeaderText>Super Hero Index</LoginHeaderText>
+                    <LoginHeaderMessage>Faça o seu login para ter acesso as informações secretas de todos os heróis.</LoginHeaderMessage>
+                </LoginHeader>
+                <LoginButton onClick={this.login.bind(this)}>Login</LoginButton>
+            </LoginContent>
+
         );
     }
 }

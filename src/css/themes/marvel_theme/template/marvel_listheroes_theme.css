@@ -1,0 +1,8 @@
+.hero-list-name {
+    background-color: #e23636;
+    text-shadow: 0 0 10px #e23636;
+    box-shadow: 0 0 25px 0 #e23636, 0 20px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.hero-list-name {
+    color: white;    
+}

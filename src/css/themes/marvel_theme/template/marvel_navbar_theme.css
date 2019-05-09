@@ -1,0 +1,28 @@
+.nav-bar .logo {
+    background-color: #E23636;
+}
+.nav-bar .logo .logo-icon:hover {
+    color: white;
+}
+.nav-bar .logo .logo-text {
+    color: #f6f6f6;
+}
+.nav-bar .menu {
+    background-color: #fdf6f7;
+}
+.nav-bar .menu .menu-item .menu-link {
+    color: black;
+}
+.nav-bar .menu-item .menu-link i {
+    color: #db5656;
+}
+.menu-link i:hover {
+    color: yellow;
+}
+.nav-bar .menu .menu-item .menu-link span {
+    color: #020000;
+}
+.nav-bar .user-panel {
+    background-color: #E23636;
+    color: #f6f6f6;
+}

@@ -25,12 +25,8 @@
   border-radius: 30px;
   list-style-type: none;
   font-size: 1.5em;
-  color: white;
   text-decoration: none;
   font-family: "Fjalla One", sans-serif;
-  background-color: #0476f2;
-  text-shadow: 0 0 10px #0476f2;
-  box-shadow: 0 0 25px 0 #0476f2, 0 20px 10px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 2%;
 }
 

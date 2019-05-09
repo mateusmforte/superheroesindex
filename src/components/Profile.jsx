@@ -1,4 +1,5 @@
 import React from "react";
+import { ProfileContainer } from "../css/Profile";
 import HeroName from "./HeroName";
 import HeroAppearance from "./HeroAppearance";
 import HeroBiography from "./HeroBiography";
@@ -6,7 +7,7 @@ import HeroStatus from "./HeroStatus";
 import Loading from "./Loading";
 import Error from "./Error";
 
-import "../css/profile.css";
+//import "../css/profile.css";
 
 export default class Profile extends React.Component {
   constructor() {
@@ -15,7 +16,7 @@ export default class Profile extends React.Component {
       hero: [{}],
       isLoading: true,
       error: false,
-      errorType: ''
+      errorType: ""
     };
   }
   componentWillMount() {
@@ -30,45 +31,49 @@ export default class Profile extends React.Component {
         this.setState({ hero, isLoading: false });
       })
       .catch(err => {
-        this.setState({error:true, errorType:'connection', isLoading: false});
+        this.setState({
+          error: true,
+          errorType: "connection",
+          isLoading: false
+        });
       });
   }
 
   render() {
-    return (
-      <div style={{ height: "100%" }}>
-        {this.state.isLoading && <Loading text="Carregando Herói.." />}
-        {this.state.error && <Error error={this.state.errorType}/>}
-        {!this.state.isLoading && !this.state.error && (
-          <div className="profile-container">
-            <HeroName heroname={this.state.hero.name} />
-            <HeroAppearance
-              heroimage={this.state.hero.image.url}
-              heroId={this.state.hero.id}
-              heroName={this.state.hero.name}
-            />
-            <HeroBiography
-              fullname={this.state.hero.biography["full-name"]}
-              gender={this.state.hero.appearance.gender}
-              race={this.state.hero.appearance.race}
-              height={this.state.hero.appearance.height}
-              eyecolor={this.state.hero.appearance["eye-color"]}
-              haircolor={this.state.hero.appearance["hair-color"]}
-              alteregos={this.state.hero.biography["alter-egos"]}
-              aliases={this.state.hero.biography["aliases"]}
-              placeofbirth={this.state.hero.biography["place-of-birth"]}
-              firstappearance={this.state.hero.biography["first-appearance"]}
-              publisher={this.state.hero.biography.publisher}
-              alingment={this.state.hero.biography.alingment}
-              occupation={this.state.hero.work.occupation}
-              base={this.state.hero.work.base}
-              group={this.state.hero.connections["group-affiliation"]}
-              relatives={this.state.hero.connections.relatives}
-            />
-            <HeroStatus statusdata={this.state.hero.powerstats} />
-          </div>
-        )}
-      </div>
-    );
+    if (this.state.isLoading) {
+      return <Loading text="Carregando Herói.." />;
+    } else if (this.state.error) {
+      return <Error error={this.state.errorType} />;
+    } else {
+      return (
+        <ProfileContainer>
+          <HeroName heroname={this.state.hero.name} />
+          <HeroAppearance
+            heroimage={this.state.hero.image.url}
+            heroId={this.state.hero.id}
+            heroName={this.state.hero.name}
+          />
+          <HeroBiography
+            fullname={this.state.hero.biography["full-name"]}
+            gender={this.state.hero.appearance.gender}
+            race={this.state.hero.appearance.race}
+            height={this.state.hero.appearance.height}
+            eyecolor={this.state.hero.appearance["eye-color"]}
+            haircolor={this.state.hero.appearance["hair-color"]}
+            alteregos={this.state.hero.biography["alter-egos"]}
+            aliases={this.state.hero.biography["aliases"]}
+            placeofbirth={this.state.hero.biography["place-of-birth"]}
+            firstappearance={this.state.hero.biography["first-appearance"]}
+            publisher={this.state.hero.biography.publisher}
+            alingment={this.state.hero.biography.alingment}
+            occupation={this.state.hero.work.occupation}
+            base={this.state.hero.work.base}
+            group={this.state.hero.connections["group-affiliation"]}
+            relatives={this.state.hero.connections.relatives}
+          />
+          <HeroStatus statusdata={this.state.hero.powerstats} />
+        </ProfileContainer>
+      );
+    }
   }
 }

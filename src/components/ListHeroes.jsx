@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import heroesData from "../data/heroes.json";
 import Error from "./Error";
 import Search from "./Search";
-import "../css/listheroes.css";
+
+import { ListContainer, HeroesList } from "../css/ListHeroes";
+//import "../css/listheroes.css";
 
 //const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
@@ -43,23 +45,23 @@ export default class ListHeroes extends React.Component {
   render() {
     var listLength = this.state.searchHeroes.length;
     return (
-        <main className="list-container">
-          <Search onChange={this.searchHeroes.bind(this)} />
-          {this.state.searchHeroes.length === 0 && (<Error error='notfound'/>)}
-          <ul id="heroes-list">
-            {this.state.searchHeroes.map(hero => (
-              <Link
-                to={`/profile/${hero.id}`}
-                key={hero.id}
-                className="hero-list-name"
-              >
-                {hero.heroname}
-              </Link>
-            ))}
-          </ul>
-        </main>
+      <ListContainer>
+        <Search onChange={this.searchHeroes.bind(this)} />
+        {listLength === 0 && <Error error="notfound" />}
+        <HeroesList>
+          {this.state.searchHeroes.map(hero => (
+            <Link
+              to={`/profile/${hero.id}`}
+              key={hero.id}
+              className="hero-list-name"
+            >
+              {hero.heroname}
+            </Link>
+          ))}
+        </HeroesList>
+      </ListContainer>
     );
-  /*   if(this.props.auth.isAuthenticated()){
+    /*   if(this.props.auth.isAuthenticated()){
      
     }
     else{

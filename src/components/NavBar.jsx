@@ -1,54 +1,61 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { ThemeProvider, styled} from "styled-components";
+import {
+  NavBarContent,
+  Navbar,
+  LogoIcon,
+  LogoText,
+  Menu,
+  MenuItem,
+  UserPanel,
+  UserInfo
+} from "../css/NavBar";
+/* import { ThemeProvider, styled } from "styled-components";
+import theme from "styled-theming"; */
 
-import "../css/utils/navbar.css";
-
-
-const NavBar = styled.
-
+//import "../css/utils/navbar.css";
 
 export default class NavBar extends Component {
   constructor() {
     super();
-    this.state = {};
-    
+    this.state = {
+      theme: "marvel"
+    };
   }
 
   render() {
     //const { isAuthenticated } = this.props.auth;
     return (
-      /*  */
-      <div className="nav-bar-content">
-        <ThemeProvider theme={theme}>
-          <nav className="nav-bar">
-            <NavLink to="/" className="logo">
-              <i className="logo-icon" />
-              <span className="logo-text">SuperHeroIndeX</span>
-            </NavLink>
-            <ul className="menu">
-              <li className="menu-item">
-                <NavLink className="menu-link" to="/listheroes">
-                  <i className="far fa-list-alt" />
-                  <span>Todos os heróis</span>
-                </NavLink>
-              </li>
-              <li className="menu-item">
-                <NavLink className="menu-link" to="/favorites">
-                  <i className="far fa-star" />
-                  <span>Heróis Favoritos</span>
-                </NavLink>
-              </li>
-            </ul>
-            <div className="user-panel">
-              <div id="user-info">
-                <span>Nome usuário</span>
+      <NavBarContent>
+        <Navbar>
+          <NavLink to="/mainmenu" className="logo">
+            <LogoIcon />
+            <LogoText>Super Hero Index</LogoText>
+          </NavLink>
+          <Menu>
+            <MenuItem>
+              <NavLink className="menu-link" to="/listheroes">
+                <i className="far fa-list-alt" />
+                <span>Todos os heróis</span>
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink className="menu-link" to="/favorites">
+                <i className="far fa-star" />
+                <span>Heróis Favoritos</span>
+              </NavLink>
+            </MenuItem>
+          </Menu>
+          <UserPanel>
+            <UserInfo>
+              <span>Nome usuário</span>
+              <NavLink to="/settings">
                 <i className="fas fa-cog" id="user-options" />
-              </div>
-            </div>
-          </nav>
-        </ThemeProvider>
-      </div>
+              </NavLink>
+            </UserInfo>
+          </UserPanel>
+        </Navbar>
+      </NavBarContent>
     );
   }
 }

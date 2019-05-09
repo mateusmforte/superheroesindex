@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import {NameArea,Name} from '../css/Profile';
 
-export default class HeroName extends React.Component{
-    render(){
-        return(
-            <div className="name-area">
-                <h1>{this.props.heroname}</h1>
-            </div>
-        )
-    }
+export default class HeroName extends React.Component {
+  render() {
+    return (
+      <NameArea>
+        <Name>{this.props.heroname}</Name>
+      </NameArea>
+    );
+  }
 }

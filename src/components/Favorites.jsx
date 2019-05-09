@@ -1,16 +1,22 @@
 import React from "react";
 
-import "../css/favorites.css";
+//import "../css/favorites.css";
 import Search from "./Search";
 import Error from "./Error";
 import FavoriteItem from "./FavoriteItem";
 
+import {
+  FavoritesContainer,
+  FavoritesTitle,
+  FavoritesList
+} from "../css/Favorites";
+
 export default class Favorites extends React.Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       favoritesHeroes: JSON.parse(localStorage.getItem("user")).favoritesHeroes,
-      searchHeroes: [],
+      searchHeroes: []
     };
 
     this.searchHeroes = this.searchHeroes.bind(this);
@@ -30,11 +36,11 @@ export default class Favorites extends React.Component {
 
   render() {
     return (
-      <div className="favorites-container">
-        <h1 className="favorites-title">My Favorites Heroes</h1>
+      <FavoritesContainer>
+        <FavoritesTitle>My Favorites Heroes</FavoritesTitle>
         <Search onChange={this.searchHeroes} />
-        {this.state.searchHeroes.length === 0 && (<Error error='notfound'/>)}
-        <div className="favorites-list">
+        {this.state.searchHeroes.length === 0 && <Error error="notfound" />}
+        <FavoritesList>
           {this.state.searchHeroes.map(hero => (
             <FavoriteItem
               key={hero.id}
@@ -42,8 +48,8 @@ export default class Favorites extends React.Component {
               history={this.props.history}
             />
           ))}
-        </div>
-      </div>
+        </FavoritesList>
+      </FavoritesContainer>
     );
   }
 }

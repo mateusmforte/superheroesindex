@@ -1,92 +1,98 @@
 import React from "react";
+import {
+  BiographyArea,
+  ProfileContent,
+  AlterEgos,
+  Aliases
+} from "../css/Profile";
 
 export default class HeroBiography extends React.Component {
   render() {
     return (
-      <div className="biography-area">
+      <BiographyArea>
         <section id="biography">
-          <div className="profile-content">
+          <ProfileContent>
             <h2>{this.props.fullname}</h2>
             <ul>
               <li>
-                Gender:<span>{this.props.gender}</span>
+                Gênero:<span>{this.props.gender}</span>
               </li>
               <li>
-                Race:<span>{this.props.race}</span>
+                Raça:<span>{this.props.race}</span>
               </li>
               <li>
-                Height:
-                {this.props.height.map(height => (
-                  <span>{"(" + height + ")"}</span>
+                Altura:
+                {this.props.height.map((height,index) => (
+                  <span key={index}>{"(" + height + ")"}</span>
                 ))}
               </li>
               <li>
-                Eye Color:<span>{this.props.eyecolor}</span>
+                Cor dos Olhos:<span>{this.props.eyecolor}</span>
               </li>
               <li>
-                Hair Color:<span>{this.props.haircolor}</span>
+                Cor do Cabelo:<span>{this.props.haircolor}</span>
               </li>
             </ul>
             <label htmlFor="alter-egos">Alter egos:</label>
-            <ul id="alter-egos">
+            <AlterEgos>
               <li>{this.props.alteregos}</li>
-            </ul>
+            </AlterEgos>
 
-            <label htmlFor="aliases">Aliases:</label>
-            <ul id="aliases">
-              {this.props.aliases.map(aliase => (
-                <li>{aliase}</li>
+            <label htmlFor="aliases">Conhecido por:</label>
+            <Aliases>
+              {this.props.aliases.map((aliase,index) => (
+                <li key={index}>{aliase}</li>
               ))}
-            </ul>
+            </Aliases>
 
             <label htmlFor="place-of-birth">
-              Place of Birth:
+              Local de nascimento:
               <span id="place-of-birth">{this.props.placeofbirth}</span>
             </label>
 
             <label htmlFor="first-appearance">
-              First appearance:
+              Primeira Aparição:
               <span id="first-appearance">{this.props.firstappearance}</span>
             </label>
 
             <label htmlFor="publisher">
-              Publisher:
+              Publicado por:
               <span id="publisher">{this.props.publisher}</span>
             </label>
 
             <label htmlFor="alignment">
-              Alignment:
+              Seguimento:
               <span id="alignment">{this.props.alingment}</span>
             </label>
-          </div>
+          </ProfileContent>
         </section>
 
         <section id="work">
-          <div className="profile-content">
+          <ProfileContent>
             <label htmlFor="occupation">
-              Occupation:
+              Ocupação:
               <span id="occupation">{this.props.occupation}</span>
             </label>
             <label htmlFor="base">
               Base:
               <span id="base">{this.props.base}</span>
             </label>
-          </div>
+          </ProfileContent>
         </section>
 
         <section id="connections">
-          <div className="profile-content">
+          <ProfileContent>
             <label htmlFor="group-affiliation">
-              Group Affiliation:
+              Grupo(s) afiliado:
               <span id="group-affiliation">{this.props.group}</span>
             </label>
             <label htmlFor="relatives">
-              Relatives:
+              Relações:
               <span id="relatives">{this.props.relatives}</span>
             </label>
-          </div>
+          </ProfileContent>
         </section>
-      </div>
+      </BiographyArea>
     );
   }
 }
