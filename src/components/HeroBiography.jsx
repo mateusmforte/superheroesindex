@@ -12,7 +12,7 @@ export default class HeroBiography extends React.Component {
       <BiographyArea>
         <section id="biography">
           <ProfileContent>
-            <h2>{this.props.fullname}</h2>
+            <h2>Nome: {this.props.fullname}</h2>
             <ul>
               <li>
                 Gênero:<span>{this.props.gender}</span>
@@ -62,7 +62,7 @@ export default class HeroBiography extends React.Component {
 
             <label htmlFor="alignment">
               Seguimento:
-              <span id="alignment">{this.props.alingment}</span>
+              <span id="alignment">{this.props.alignment}</span>
             </label>
           </ProfileContent>
         </section>

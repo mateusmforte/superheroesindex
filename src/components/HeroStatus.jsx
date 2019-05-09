@@ -12,6 +12,7 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
   Radar,
+  ResponsiveContainer
 } from "recharts";
 export default class HeroStatus extends React.Component {
   constructor(props) {
@@ -48,10 +49,10 @@ export default class HeroStatus extends React.Component {
   render() {
     return (
       <StatusArea>
-        <section id="power-status">
-          <RadarChart width={300} height={250} data={this.state.powers}>
+        <ResponsiveContainer width="99%" aspect={1.8}>
+         <RadarChart data={this.state.powers}>
             <PolarGrid />
-            <PolarAngleAxis dataKey="power" />
+            <PolarAngleAxis dataKey="power"/>
             <PolarRadiusAxis angle={30} domain={[0, 100]} />
             <Radar
               dataKey="quantity"
@@ -60,6 +61,7 @@ export default class HeroStatus extends React.Component {
               fillOpacity={0.6}
             />
           </RadarChart>
+          </ResponsiveContainer>
           <table>
             <PowerTable>
               <PowerTableIcons>
@@ -107,8 +109,8 @@ export default class HeroStatus extends React.Component {
               </PowerTableText>
             </PowerTable>
           </table>
-        </section>
       </StatusArea>
+      
     );
   }
 }

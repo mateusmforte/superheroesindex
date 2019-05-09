@@ -23,6 +23,19 @@ export const MainContent = styled.div`
   flex-direction: column;
   background-color: #24262b;
   color: #f9f9f9;
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: red;
+  }
   @media (min-width: 768px) {
     width: 89%;
     padding: 1%;

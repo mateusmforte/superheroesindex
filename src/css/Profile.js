@@ -1,35 +1,30 @@
 import styled from "styled-components";
 
-
-
 export const ProfileContainer = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 1fr 2fr 4fr 4fr;
+  grid-template-rows: 1fr 2fr 4fr 5fr;
   grid-template-areas:
     "name"
     "appearance"
-    "biography" 
+    "biography"
     "status";
   padding: 5% 5%;
   grid-gap: 2%;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: overlay;
   font-family: "A typewriter for me";
-  @media(min-width:768px){
-    grid-template-columns: 30% 50% 15%;
+/*   @media (min-width: 768px) {
+    grid-template-columns: 18% 48% 28%;
     grid-template-rows: 10% 90%;
-    grid-template-areas:
-      "name name name"
-    "appearance biography status";
-  }
+    grid-template-areas: "name name name" "appearance biography status";
+    padding: 2%;
+  } */
 `;
-
-
 
 /* HeroName */
 export const NameArea = styled.div`
-    grid-area: name;
+  grid-area: name;
 `;
 export const Name = styled.h1`
   font-family: "Play", sans-serif;
@@ -40,21 +35,19 @@ export const Name = styled.h1`
 
 export const AppearanceArea = styled.div`
   grid-area: appearance;
-  display:flex;
-  flex-direction-column;
-  justify-content: center;
-  padding: 9%;
-`;
-export const AppearanceInfo = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const HeroImage = styled.img`
-  width: 100%;
+  width: 60%;
   box-shadow: 14px 11px 9px 7px rgba(0, 0, 0, 0.75);
   margin-bottom: 5%;
+  @media(min-width:768px){
+    width: 40%;
+  }
 `;
 
 export const AddFavoriteButton = styled.button`
@@ -80,21 +73,27 @@ export const ProfileContent = styled.div`
   flex-direction: column;
   align-content: space-between;
   & label {
-    line-height: 1.5em;
+    & span{
+      margin-left: 2%;
+      text-decoration: underline;
+    }
   }
 `;
 
 export const BiographyArea = styled.div`
   grid-area: biography;
+  line-height: 2.5em;
 `;
 
 export const AlterEgos = styled.ul`
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
 `;
 
 export const Aliases = styled.ul`
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
 `;
 
@@ -102,6 +101,14 @@ export const Aliases = styled.ul`
 
 export const StatusArea = styled.div`
   grid-area: status;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  margin-bottom: 16%;
+  color: white;
+  @media(min-width:768px){
+    margin-bottom: 0;
+  }
 `;
 export const PowerTable = styled.tbody`
   display: flex;

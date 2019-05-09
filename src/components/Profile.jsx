@@ -65,7 +65,7 @@ export default class Profile extends React.Component {
             placeofbirth={this.state.hero.biography["place-of-birth"]}
             firstappearance={this.state.hero.biography["first-appearance"]}
             publisher={this.state.hero.biography.publisher}
-            alingment={this.state.hero.biography.alingment}
+            alignment={this.state.hero.biography.alignment}
             occupation={this.state.hero.work.occupation}
             base={this.state.hero.work.base}
             group={this.state.hero.connections["group-affiliation"]}

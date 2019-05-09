@@ -1,5 +1,5 @@
 import React from "react";
-import {AppearanceArea,AppearanceInfo,HeroImage,AddFavoriteButton} from '../css/Profile';
+import {AppearanceArea,HeroImage,AddFavoriteButton} from '../css/Profile';
 export default class HeroAppearance extends React.Component {
   favorite() {
     var heroId = this.props.heroId;
@@ -41,7 +41,6 @@ export default class HeroAppearance extends React.Component {
   render() {
     return (
       <AppearanceArea>
-        <AppearanceInfo>
           <HeroImage src={this.props.heroimage} alt="Hero Profile" />
           <AddFavoriteButton
             heroId={this.props.heroId}
@@ -50,7 +49,6 @@ export default class HeroAppearance extends React.Component {
           >
             <i className="fas fa-star" />
           </AddFavoriteButton>
-        </AppearanceInfo>
       </AppearanceArea>
     );
   }
