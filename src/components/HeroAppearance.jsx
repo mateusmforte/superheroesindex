@@ -26,7 +26,6 @@ class HeroAppearance extends React.Component {
     actualFavorites.filter(hero => {
       if (hero["id"] === heroId) {
         isFavorite = true;
-        console.log(isFavorite);
         return true;
       }
       return false;
@@ -34,8 +33,10 @@ class HeroAppearance extends React.Component {
 
     if (isFavorite) {
       this.props.removeFavorite(favorite.id);
+      document.querySelector("#favorite-button").classList.toggle("isFavorite");
     } else {
       this.props.addFavorite(favorite);
+      document.querySelector("#favorite-button").classList.toggle("isFavorite");
     }
   }
 
@@ -44,6 +45,7 @@ class HeroAppearance extends React.Component {
       <AppearanceArea>
         <HeroImage src={this.props.heroimage} alt="Hero Profile" />
         <AddFavoriteButton
+          id="favorite-button"
           heroId={this.props.heroId}
           heroName={this.props.heroName}
           onClick={() => this.toggleFavorite()}

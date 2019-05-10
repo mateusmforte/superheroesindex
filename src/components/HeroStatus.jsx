@@ -105,7 +105,7 @@ export default class HeroStatus extends React.Component {
             <PowerTableText>
               {this.state.powers.map((power, index) => (
                 <td key={index} className="power-text">
-                  {power.quantity}
+                  {power.quantity? power.quantity: '0'}
                 </td>
               ))}
             </PowerTableText>

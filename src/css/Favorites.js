@@ -17,8 +17,8 @@ export const FavoritesList = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-auto-rows: 1fr;
   grid-gap: 5%;
-  width: 80%;
-  padding: 2%;
+  width: 76%;
+  padding: 2% 5%;
   overflow-y: auto;
   overflow-x: hidden;
   align-self: center;

@@ -24,7 +24,7 @@ export default class NavBar extends Component {
     return (
       <NavBarContent>
         <Navbar>
-          <NavLink to="/mainmenu" className="logo">
+          <NavLink to="/" className="logo">
             <LogoIcon />
             <LogoText>Super Hero Index</LogoText>
           </NavLink>
@@ -44,7 +44,6 @@ export default class NavBar extends Component {
           </Menu>
           <UserPanel>
             <UserInfo>
-              <span>Nome usuário</span>
               <NavLink to="/settings">
                 <i className="fas fa-cog" id="user-options" />
               </NavLink>

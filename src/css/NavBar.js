@@ -5,7 +5,8 @@ import {
   secondaryColor,
   textPrimaryColor,
   textSecondaryColor,
-  hoverTextColor
+  hoverTextColor,
+  textCommonColor
 } from "./utils/themecolors";
 //Theme
 
@@ -69,8 +70,9 @@ export const LogoIcon = styled.i`
 export const LogoText = styled.span`
   @media (min-width: 768px) {
     font-family: "Play", sans-serif;
-    font-size: 1.2vw;
-    color: ${textPrimaryColor};
+    font-size: 1em;
+    text-align: center;
+    color: ${textCommonColor};
     text-decoration: none;
   }
 `;
@@ -128,7 +130,7 @@ export const MenuItem = styled.li`
         font-size: 4vw;
       }
       span {
-        font-size: 1vw;
+        font-size: 1.3vw;
       }
     }
   }
@@ -159,27 +161,16 @@ export const UserInfo = styled.div`
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  color: ${textPrimaryColor};
+  color: ${textCommonColor};
   text-decoration: none;
-  & span {
-    font-size: 3.5vw;
-  }
   & i {
-    font-size: 25px;
+    font-size: 3em;
     order: 0;
   }
   & a {
-    color: ${textPrimaryColor};
+    color: ${textCommonColor};
     &:hover {
-      color: ${textSecondaryColor};
-    }
-  }
-  @media (min-witdh: 768px) {
-    & span {
-      font-size: 1.5vw;
-    }
-    & i {
-      font-size: 3vw;
+      color: ${textPrimaryColor};
     }
   }
 `;

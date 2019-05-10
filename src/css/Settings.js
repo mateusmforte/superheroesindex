@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {textPrimaryColor} from "./utils/themecolors";
+
 
 export const SettingsContainer = styled.div`
   display: flex;
@@ -7,27 +9,36 @@ export const SettingsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  & h3 {
+    font-size: 1.5em;
+    color: ${textPrimaryColor};
+    text-align: center;
+    font-family: "Play",sans-serif;
+  }
 `;
 
 export const ThemeSettings = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  & h3 {
-    text-align: center;
-  }
+  justify-content: space-around;
+  width: 50%;
+  
 `;
 
 export const MarvelTheme = styled.button`
-  border: 2px solid #e23636;
-  background-color: #fdf6f7;
-  border-radius: 50%;
+  background-image: url(${require("../img/icons/Marvel-logo.png")});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   box-shadow: 0px 0px 10px 3px black;
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+  border:none;
+  &:focus{
+    outline:none;
+  }
 `;
 
 export const DCTheme = styled(MarvelTheme)`
-  border: 2px solid #0476f2;
-  background-color: #283044;
+ background-image: url(${require("../img/icons/DC-logo.png")});
 `;

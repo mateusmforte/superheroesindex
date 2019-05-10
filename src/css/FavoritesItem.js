@@ -5,9 +5,10 @@ export const FavoriteHero = styled.div`
   text-align: center;
   color: red;
   height: fit-content;
+  margin-top: 10%;
   &:hover {
     transition: 0.2s;
-    transform: scale(1.1);
+    transform: scale(1.08);
   }
   & .remove-button {
     position: absolute;
@@ -16,7 +17,7 @@ export const FavoriteHero = styled.div`
     top: -19px;
     &:hover {
       transition: 0.5s;
-      transform: scale(1.3);
+      transform: scale(1.1);
     }
   }
 `;

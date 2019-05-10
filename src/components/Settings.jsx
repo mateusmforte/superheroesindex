@@ -10,10 +10,10 @@ import {
 
 const Settings = ({ toggleTheme }) => (
   <SettingsContainer>
+  <h3>Temas disponíveis</h3>
     <ThemeSettings>
-      <h3>Temas disponíveis</h3>
-      <MarvelTheme onClick={() => toggleTheme("marvel")}>Marvel</MarvelTheme>
-      <DCTheme onClick={() => toggleTheme("dc")}>DC</DCTheme>
+      <MarvelTheme onClick={() => toggleTheme("marvel")}></MarvelTheme>
+      <DCTheme onClick={() => toggleTheme("dc")}></DCTheme>
     </ThemeSettings>
   </SettingsContainer>
 );

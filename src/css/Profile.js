@@ -65,6 +65,9 @@ export const AddFavoriteButton = styled.button`
     background-color: orange;
     box-shadow: 0px 0px 15px 5px yellow;
   }
+  &:focus{
+    outline: none;
+  }
 `;
 
 /* Hero Biography */

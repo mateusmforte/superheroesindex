@@ -42,7 +42,7 @@ class Favorites extends React.Component {
         <FavoritesTitle>My Favorites Heroes</FavoritesTitle>
         <Search onChange={this.searchHeroes} />
         {this.state.searchHeroes.length === 0 && <Error error="notfound" />}
-        <FavoritesList>
+        <FavoritesList id="favorite-list">
           {this.state.searchHeroes.map(hero => (
             <FavoriteItem
               key={hero.id}

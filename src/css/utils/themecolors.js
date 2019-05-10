@@ -10,6 +10,11 @@ export const secondaryColor = theme("theme", {
   marvel: "#fdf6f7"
 });
 
+export const textCommonColor = theme("theme",{
+  dc: "#f9f9f9",
+  marvel: "#f9f9f9"
+});
+
 export const textPrimaryColor = theme("theme", {
   dc: "#f9f9f9",
   marvel: "#283044"

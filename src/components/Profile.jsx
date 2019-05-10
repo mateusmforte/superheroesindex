@@ -10,8 +10,7 @@ import Error from "./Error";
 import { ProfileContainer } from "../css/Profile";
 
 export default class Profile extends React.Component {
-  constructor() {
-    super();
+  constructor() {    super();
     this.state = {
       hero: [{}],
       isLoading: true,

@@ -6,9 +6,10 @@ import MainMenu from "./components/MainMenu";
 import ListHeroes from "./components/ListHeroes";
 import Profile from "./components/Profile";
 import Favorites from "./components/Favorites";
+import Settings from "./components/Settings";
 /* import Loading from "./components/Loading";
 import Login from "./components/Login"; */
-import Settings from "./components/Settings";
+
 
 const Routes = () => (
   <BrowserRouter>
@@ -17,7 +18,7 @@ const Routes = () => (
     </HeaderContent>
     <MainContent>
       <Switch>
-        <Route path="/" render={props => <MainMenu {...props} />} />
+        <Route exact path="/" render={props => <MainMenu {...props} />} />
         <Route path="/listheroes" render={props => <ListHeroes {...props} />} />
         <Route path="/profile/:id" render={props => <Profile {...props} />} />
         <Route path="/favorites" render={props => <Favorites {...props} />} />
