@@ -10,22 +10,21 @@ import Settings from "./components/Settings";
 /* import Loading from "./components/Loading";
 import Login from "./components/Login"; */
 
-
 const Routes = () => (
-  <BrowserRouter>
-    <HeaderContent>
-      <NavBar />
-    </HeaderContent>
-    <MainContent>
-      <Switch>
-        <Route exact path="/" render={props => <MainMenu {...props} />} />
-        <Route path="/listheroes" render={props => <ListHeroes {...props} />} />
-        <Route path="/profile/:id" render={props => <Profile {...props} />} />
-        <Route path="/favorites" render={props => <Favorites {...props} />} />
-        <Route path="/settings" render={props => <Settings {...props} />} />
-      </Switch>
-    </MainContent>
-  </BrowserRouter>
+	<BrowserRouter>
+		<HeaderContent>
+			<NavBar />
+		</HeaderContent>
+		<MainContent>
+			<Switch>
+				<Route exact path="/" render={props => <MainMenu {...props} />} />
+				<Route path="/listheroes" render={props => <ListHeroes {...props} />} />
+				<Route path="/profile/:id" render={props => <Profile {...props} />} />
+				<Route path="/favorites" render={props => <Favorites {...props} />} />
+				<Route path="/settings" render={props => <Settings {...props} />} />
+			</Switch>
+		</MainContent>
+	</BrowserRouter>
 );
 
 export default Routes;

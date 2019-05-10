@@ -5,15 +5,15 @@ import Routes from "./Routes";
 import { connect } from "react-redux";
 
 class App extends React.Component {
-  render() {
-    return (
-      <ThemeProvider theme={this.props.theme}>
-        <Routes />
-      </ThemeProvider>
-    );
-  }
+	render() {
+		return (
+			<ThemeProvider theme={this.props.theme}>
+				<Routes />
+			</ThemeProvider>
+		);
+	}
 }
 
-const mapStateToProps = state => ({theme: state.theme});
+const mapStateToProps = state => ({ theme: state.theme });
 
 export default connect(mapStateToProps)(App);
