@@ -1,7 +1,7 @@
 import React from "react";
 
 import { SearchInput, SearchContainer, StyledSearch } from "../css/Search";
-//import "../css/utils/search.css";
+
 
 export default class Search extends React.Component {
   render() {

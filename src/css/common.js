@@ -1,7 +1,7 @@
 import "./utils/reset.css";
 import "./utils/common.css";
 import styled from "styled-components";
-import {secondaryColor,textPrimaryColor} from './utils/themecolors';
+import { secondaryColor, textPrimaryColor } from "./utils/themecolors";
 
 export const HeaderContent = styled.div`
   height: 10%;

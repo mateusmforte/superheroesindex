@@ -22,7 +22,7 @@ export default class HeroBiography extends React.Component {
               </li>
               <li>
                 Altura:
-                {this.props.height.map((height,index) => (
+                {this.props.height.map((height, index) => (
                   <span key={index}>{"(" + height + ")"}</span>
                 ))}
               </li>
@@ -40,7 +40,7 @@ export default class HeroBiography extends React.Component {
 
             <label htmlFor="aliases">Conhecido por:</label>
             <Aliases>
-              {this.props.aliases.map((aliase,index) => (
+              {this.props.aliases.map((aliase, index) => (
                 <li key={index}>{aliase}</li>
               ))}
             </Aliases>

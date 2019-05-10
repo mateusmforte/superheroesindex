@@ -1,6 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 
-//import "../css/favorites.css";
+
 import Search from "./Search";
 import Error from "./Error";
 import FavoriteItem from "./FavoriteItem";
@@ -11,21 +12,22 @@ import {
   FavoritesList
 } from "../css/Favorites";
 
-export default class Favorites extends React.Component {
+class Favorites extends React.Component {
   constructor() {
     super();
     this.state = {
-      favoritesHeroes: JSON.parse(localStorage.getItem("user")).favorites,
       searchHeroes: []
     };
 
     this.searchHeroes = this.searchHeroes.bind(this);
   }
   componentWillMount() {
-    this.setState({ searchHeroes: this.state.favoritesHeroes });
+    var heroes = [];
+    this.props.favorites.favorites.map(favorite => heroes.push(favorite));
+    this.setState({ searchHeroes: heroes });
   }
   searchHeroes(event) {
-    var updatedList = this.state.favoritesHeroes;
+    var updatedList = this.props.favorites.favorites;
     updatedList = updatedList.filter(
       item =>
         item.heroname.toLowerCase().search(event.target.value.toLowerCase()) !==
@@ -53,3 +55,7 @@ export default class Favorites extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({ favorites: state.favorites });
+
+export default connect(mapStateToProps)(Favorites);

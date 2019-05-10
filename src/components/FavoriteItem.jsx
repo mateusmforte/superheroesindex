@@ -1,28 +1,27 @@
 import React from "react";
+import { connect } from "react-redux";
+import * as FavoriteActions from "../Store/actions/FavoritesActions";
+
 import {
   FavoriteHero,
   FavoriteHeroImage,
   FavoriteHeroName
 } from "../css/FavoritesItem";
-export default class FavoriteItem extends React.Component {
+
+class FavoriteItem extends React.Component {
   constructor() {
     super();
-    // this.unfavorite = this.unfavorite.bind(this);
     this.showProfile = this.showProfile.bind(this);
   }
-  /*     unfavorite(){
-        
-    } */
   showProfile() {
     this.props.history.push(`/profile/${this.props.hero.id}`);
-    /*  {`/profile/${this.props.hero.id}`}/>; */
   }
   render() {
     return (
       <FavoriteHero key={this.props.hero.id}>
         <i
           className="remove-button far fa-times-circle"
-          onClick={() => this.unfavorite(this.props.hero.id)}
+          onClick={() => this.props.removeFavorite(this.props.hero.id)}
         />
         <div onClick={() => this.showProfile(this.props.hero.id)}>
           <FavoriteHeroImage src={this.props.hero.img} alt="" />
@@ -32,3 +31,9 @@ export default class FavoriteItem extends React.Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  removeFavorite: favoriteId =>
+    dispatch(FavoriteActions.removeFavorite(favoriteId))
+});
+export default connect(mapDispatchToProps)(FavoriteItem);

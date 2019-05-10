@@ -1,55 +1,70 @@
 import React from "react";
-import {AppearanceArea,HeroImage,AddFavoriteButton} from '../css/Profile';
-export default class HeroAppearance extends React.Component {
-  favorite() {
+import { connect } from "react-redux";
+import * as FavoriteActions from "../Store/actions/FavoritesActions";
+
+import { AppearanceArea, HeroImage, AddFavoriteButton } from "../css/Profile";
+
+class HeroAppearance extends React.Component {
+  constructor() {
+    super();
+    this.toggleFavorite = this.toggleFavorite.bind(this);
+  }
+  toggleFavorite() {
     var heroId = this.props.heroId;
     var heroName = this.props.heroName;
     var heroImg = this.props.heroimage;
-
     var isFavorite = false;
-    var favorite = [];
-    var actualUserPreferences = JSON.parse(localStorage.getItem("user"));
-    var actualUserFavorites = actualUserPreferences.favoritesHeroes;
-
-    actualUserFavorites.filter(hero => {
-      if (hero.id === heroId) {
-        //Favorite
+    var favorite = {};
+    favorite = {
+      id: heroId,
+      heroname: heroName,
+      img: heroImg
+    };
+    var actualFavorites = [];
+    actualFavorites.push(this.props.favorites.favorites);
+    this.props.favorites.favorites.map(hero => actualFavorites.push(hero));
+    actualFavorites.filter(hero => {
+      if (hero["id"] === heroId) {
         isFavorite = true;
-        favorite.push(hero);
+        console.log(isFavorite);
         return true;
       }
       return false;
     });
 
     if (isFavorite) {
-      for (var elemento of favorite) {
-        var index = actualUserFavorites.indexOf(elemento);
-        actualUserFavorites.splice(index, 1);
-      }
-      actualUserFavorites.splice(heroId, 1);
-      localStorage.setItem("user", JSON.stringify(actualUserPreferences));
+      this.props.removeFavorite(favorite.id);
     } else {
-      actualUserFavorites.push({
-        id: heroId,
-        heroname: heroName,
-        img: heroImg
-      });
-      localStorage.setItem("user", JSON.stringify(actualUserPreferences));
+      this.props.addFavorite(favorite);
     }
   }
 
   render() {
     return (
       <AppearanceArea>
-          <HeroImage src={this.props.heroimage} alt="Hero Profile" />
-          <AddFavoriteButton
-            heroId={this.props.heroId}
-            heroName={this.props.heroName}
-            onClick={this.favorite.bind(this)}
-          >
-            <i className="fas fa-star" />
-          </AddFavoriteButton>
+        <HeroImage src={this.props.heroimage} alt="Hero Profile" />
+        <AddFavoriteButton
+          heroId={this.props.heroId}
+          heroName={this.props.heroName}
+          onClick={() => this.toggleFavorite()}
+        >
+          <i className="fas fa-star" />
+        </AddFavoriteButton>
       </AppearanceArea>
     );
   }
 }
+const mapStateToProps = state => ({
+  favorites: state.favorites
+});
+
+const mapDispatchToProps = dispatch => ({
+  addFavorite: favorite => dispatch(FavoriteActions.addFavorite(favorite)),
+  removeFavorite: favoriteid =>
+    dispatch(FavoriteActions.removeFavorite(favoriteid))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HeroAppearance);

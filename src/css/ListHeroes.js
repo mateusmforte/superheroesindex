@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import {primaryColor} from './utils/themecolors';
+import styled from "styled-components";
+import { primaryColor } from "./utils/themecolors";
 export const ListContainer = styled.main`
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@ export const ListContainer = styled.main`
   align-items: center;
   height: 100%;
   padding: 8% 0;
-  @media(min-width:768px){
+  @media (min-width: 768px) {
     padding: 2% 0;
   }
 `;
@@ -20,7 +20,7 @@ export const HeroesList = styled.ul`
   height: 90%;
   padding: 0;
   overflow: auto;
-  .hero-list-name{
+  .hero-list-name {
     padding: 3%;
     border-radius: 30px;
     list-style-type: none;
@@ -32,9 +32,9 @@ export const HeroesList = styled.ul`
     background-color: ${primaryColor};
     text-shadow: 0 0 10px ${primaryColor};
     box-shadow: 0 0 25px 0 ${primaryColor}, 0 20px 10px 0 rgba(0, 0, 0, 0.2);
-    color: white;    
+    color: white;
   }
-  @media(min-width:768px){
+  @media (min-width: 768px) {
     width: 60%;
   }
 `;

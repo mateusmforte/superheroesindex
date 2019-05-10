@@ -10,10 +10,6 @@ import {
   UserPanel,
   UserInfo
 } from "../css/NavBar";
-/* import { ThemeProvider, styled } from "styled-components";
-import theme from "styled-theming"; */
-
-//import "../css/utils/navbar.css";
 
 export default class NavBar extends Component {
   constructor() {

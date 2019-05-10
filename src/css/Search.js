@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {primaryColor} from './utils/themecolors';
+import { primaryColor } from "./utils/themecolors";
 
 export const SearchContainer = styled.div`
   position: relative;
@@ -70,7 +70,7 @@ export const SearchInput = styled.input`
   text-shadow: 0 0 10px ${primaryColor};
   padding: 0 80px 0 20px;
   border-radius: 30px;
-  box-shadow: 0 0 25px 0 ${primaryColor} , 0 20px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px 0 ${primaryColor}, 0 20px 10px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s;
   opacity: 0;
   z-index: 5;

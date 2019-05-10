@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {textPrimaryColor} from './utils/themecolors';
+import { textPrimaryColor } from "./utils/themecolors";
 
 export const MainMenuContent = styled.div`
   height: 100%;

@@ -1,5 +1,5 @@
 import React from "react";
-import { ProfileContainer } from "../css/Profile";
+
 import HeroName from "./HeroName";
 import HeroAppearance from "./HeroAppearance";
 import HeroBiography from "./HeroBiography";
@@ -7,7 +7,7 @@ import HeroStatus from "./HeroStatus";
 import Loading from "./Loading";
 import Error from "./Error";
 
-//import "../css/profile.css";
+import { ProfileContainer } from "../css/Profile";
 
 export default class Profile extends React.Component {
   constructor() {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {textPrimaryColor} from './utils/themecolors';
+import { textPrimaryColor } from "./utils/themecolors";
 export const ProfileContainer = styled.div`
   display: grid;
   grid-template-columns: 100%;
@@ -14,8 +14,8 @@ export const ProfileContainer = styled.div`
   height: 100%;
   overflow-y: overlay;
   font-family: "A typewriter for me";
-  color:${textPrimaryColor};
-/*   @media (min-width: 768px) {
+  color: ${textPrimaryColor};
+  /*   @media (min-width: 768px) {
     grid-template-columns: 18% 48% 28%;
     grid-template-rows: 10% 90%;
     grid-template-areas: "name name name" "appearance biography status";
@@ -46,7 +46,7 @@ export const HeroImage = styled.img`
   width: 60%;
   box-shadow: 14px 11px 9px 7px rgba(0, 0, 0, 0.75);
   margin-bottom: 5%;
-  @media(min-width:768px){
+  @media (min-width: 768px) {
     width: 40%;
   }
 `;
@@ -74,7 +74,7 @@ export const ProfileContent = styled.div`
   flex-direction: column;
   align-content: space-between;
   & label {
-    & span{
+    & span {
       margin-left: 2%;
       text-decoration: underline;
     }
@@ -107,7 +107,7 @@ export const StatusArea = styled.div`
   padding: 2%;
   margin-bottom: 16%;
   color: ${textPrimaryColor};
-  @media(min-width:768px){
+  @media (min-width: 768px) {
     margin-bottom: 0;
   }
 `;

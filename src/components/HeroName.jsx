@@ -1,5 +1,5 @@
 import React from "react";
-import {NameArea,Name} from '../css/Profile';
+import { NameArea, Name } from "../css/Profile";
 
 export default class HeroName extends React.Component {
   render() {

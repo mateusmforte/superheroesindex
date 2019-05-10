@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { primaryColor, secondaryColor } from "./utils/themecolors";
 
 export const SettingsContainer = styled.div`
   display: flex;
@@ -20,7 +19,7 @@ export const ThemeSettings = styled.div`
 `;
 
 export const MarvelTheme = styled.button`
-  border: 2px solid #E23636;
+  border: 2px solid #e23636;
   background-color: #fdf6f7;
   border-radius: 50%;
   box-shadow: 0px 0px 10px 3px black;

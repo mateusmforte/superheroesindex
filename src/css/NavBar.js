@@ -45,7 +45,7 @@ export const Navbar = styled.nav`
       flex-direction: column;
       align-items: center;
       text-decoration: none;
-      box-shadow: -6px 0px 11px 0px rgba(0,0,0,0.75);
+      box-shadow: -6px 0px 11px 0px rgba(0, 0, 0, 0.75);
       z-index: 1;
       background-color: ${primaryColor};
     }
@@ -54,7 +54,7 @@ export const Navbar = styled.nav`
 
 export const LogoIcon = styled.i`
   @media (min-width: 768px) {
-    background-image: url(${require('../img/icons/superheroemote.png')});
+    background-image: url(${require("../img/icons/superheroemote.png")});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -147,7 +147,7 @@ export const UserPanel = styled.div`
     width: auto;
     height: 15%;
     padding: 5%;
-    box-shadow: -6px 0px 11px 0px rgba(0,0,0,0.75);
+    box-shadow: -6px 0px 11px 0px rgba(0, 0, 0, 0.75);
     z-index: 1;
   }
 `;
@@ -168,9 +168,9 @@ export const UserInfo = styled.div`
     font-size: 25px;
     order: 0;
   }
-  & a{
+  & a {
     color: ${textPrimaryColor};
-    &:hover{
+    &:hover {
       color: ${textSecondaryColor};
     }
   }
